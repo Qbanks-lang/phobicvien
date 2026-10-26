@@ -1,49 +1,60 @@
 # Recommended AI-Assisted Tools
 
-Phobicvien points to external tools rather than copying their entire codebases. Check each project's latest documentation and license before installing or redistributing anything.
+Phobicvien links to external tools instead of copying their codebases wholesale. Check each project's current README, requirements, and license before installing, adapting, or redistributing files.
 
-## 1. gstack
+## 1. gstack — product and engineering workflows
 
 Repository: https://github.com/garrytan/gstack
 
-gstack provides role-oriented workflows for coding agents, including product planning, engineering review, QA, and release work. It is a development workflow tool, not a website template or a guarantee of code quality.
+gstack provides role-oriented workflows for coding agents, including product planning, engineering review, QA, and release work. It is a development workflow toolkit, not a website template or a guarantee of code quality.
 
 Suggested use:
 1. Read the upstream README and requirements.
 2. Install it for your coding agent using the upstream instructions.
-3. Ask a planning workflow to challenge the website's audience, business goal, scope, and risks.
+3. Ask a planning workflow to challenge the target audience, business goal, scope, and risks.
 4. Use review and QA workflows after implementation.
-5. Inspect every generated change yourself and run tests before deployment.
+5. Inspect every generated change and run tests before deployment.
 
-## 2. UI UX Pro Max
+## 2. UI UX Pro Max — design intelligence
 
 Repository: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill
 
-UI UX Pro Max provides design guidance for creating more consistent interfaces. Use it to explore design directions, visual hierarchy, responsive patterns, and design systems.
+UI UX Pro Max provides design guidance for exploring visual directions, hierarchy, responsive patterns, and design systems.
 
 Suggested use:
 1. Read the upstream README and install instructions.
 2. Define the target user, primary task, brand personality, accessibility needs, and supported devices.
-3. Select a coherent style and design system before building pages.
-4. Review the output for usability, keyboard access, contrast, mobile behavior, and consistency.
-5. Avoid using visual polish as a substitute for user research and testing.
+3. Choose a coherent style and design system before building pages.
+4. Review contrast, keyboard access, mobile behavior, and consistency.
+5. Do not treat visual polish as a substitute for user research or usability testing.
 
-## 3. Safe AI API setup
+## 3. Public API-key repositories — do not import keys
 
-The Phobicvien starter calls OpenAI from its Node.js backend. Use your own API key:
-- Set `OPENAI_API_KEY` in a local ignored `.env` file or a hosting provider's secret manager.
-- Do not commit real secrets or expose them to frontend JavaScript.
-- Never import shared keys from public repositories.
-- Set usage limits and monitor costs in your own provider account.
-- Add authentication, per-user quotas, and production-grade rate limiting before opening the service to the public.
+Reference supplied for review: https://github.com/dan1471/FREE-openai-api-keys
 
-## 4. A repeatable workflow
+**Phobicvien must not scrape, import, expose, or use API keys collected from a public repository.** Publicly posted credentials may belong to other people, may already be compromised or revoked, and may be used without authorization. A repository's availability does not make its keys safe or authorized to use.
 
-1. **Discover:** define user, problem, goals, and success metrics.
+For AI features:
+- Create an API key through your own provider account, or use credentials you are explicitly authorized to use.
+- Store the key as `OPENAI_API_KEY` in a local `.env` file excluded by Git, or in your hosting provider's server-side secret manager.
+- Never put keys in frontend JavaScript, public build variables, source control, screenshots, issues, or logs.
+- Do not build a key-collection feature or share keys between users.
+- Set provider spending limits where available, monitor usage, and implement authentication and per-user quotas before public launch.
+- If a key is exposed, revoke it with the provider and issue a replacement.
+
+The backend starter expects a secret supplied through the environment. See [SECURITY.md](../SECURITY.md) and [OpenAI's API authentication guidance](https://developers.openai.com/api/reference/overview).
+
+## 4. A repeatable website workflow
+
+1. **Discover:** define the user, problem, goals, and success metrics.
 2. **Plan:** list pages, user journeys, requirements, and exclusions.
-3. **Design:** establish tokens, typography, layout, components, and responsive behavior.
+3. **Design:** establish design tokens, typography, layout, components, and responsive behavior.
 4. **Build:** implement small vertical slices with clear commits.
 5. **Review:** inspect security, accessibility, maintainability, and performance.
 6. **Test:** validate key flows on mobile and desktop.
 7. **Ship:** configure environment variables, deployment, monitoring, and backups.
-8. **Handoff:** document setup, access ownership, maintenance, and known limitations.
+8. **Handoff:** document setup, ownership, maintenance, and known limitations.
+
+## 5. The $10,000 project goal
+
+A $10,000 website is an ambitious business target, not a guaranteed result. A high project price usually requires a clearly valuable business outcome, strong discovery, a reliable delivery process, evidence of quality, appropriate contracts, and ongoing client trust. Beginners should first build real portfolio projects and improve through feedback.
