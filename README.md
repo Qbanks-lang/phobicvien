@@ -91,7 +91,7 @@ See [the roadmap](docs/ROADMAP.md) for more detail and [the tools guide](docs/TO
 
 ## Security: no shared API keys
 
-Phobicvien does **not** import or use API keys collected from public repositories. Keys posted publicly may be stolen, exposed, revoked, or used without the account owner's permission. Use a key created for your own account and store it in a server-side environment variable or your hosting provider's secret manager.
+The public repository [dan1471/FREE-openai-api-keys](https://github.com/dan1471/FREE-openai-api-keys) was requested as a reference, but **its API keys are not imported into Phobicvien**. Publicly posted keys may be exposed, stolen, revoked, or unauthorized to use. Phobicvien does **not** import or use API keys collected from public repositories. Keys posted publicly may be stolen, exposed, revoked, or used without the account owner's permission. Use a key created for your own account and store it in a server-side environment variable or your hosting provider's secret manager.
 
 - Never place API keys in frontend code, public files, screenshots, issues, or commits.
 - Never use keys copied from repositories claiming to provide free API keys.
